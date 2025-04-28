@@ -1,0 +1,5 @@
+html,body{margin:0;padding:0;background:#000;height:100%;overflow:hidden}
+canvas{display:block;margin:0 auto;touch-action:none}
+#controls{position:fixed;bottom:10px;left:0;right:0;height:120px;pointer-events:none}
+.btn{position:absolute;width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,.25);pointer-events:auto}
+#left{left:10px}#right{left:120px}#jump{right:10px}
