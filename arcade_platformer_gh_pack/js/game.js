@@ -7,6 +7,8 @@ preload(){
   this.load.audio('jump','assets/audio/jump.wav')
   this.load.audio('coinS','assets/audio/coin.wav')
   this.load.audio('bgm','assets/audio/bgm.wav')
+  this.score = 0
+  this.coinsCollected = 0
 }
 create(){
   this.sound.add('bgm',{loop:true,volume:0.4}).play()
@@ -24,8 +26,22 @@ create(){
   this.cursors=this.input.keyboard.createCursorKeys()
   this.touch={left:false,right:false,jump:false}
   ;['left','right','jump'].forEach(id=>{const el=document.getElementById(id);['pointerdown','pointerover'].forEach(e=>el.addEventListener(e,()=>this.touch[id]=true));['pointerup','pointerout','pointerleave','pointercancel'].forEach(e=>el.addEventListener(e,()=>this.touch[id]=false));})
+  this.scoreText=this.add.text(16,16,'Score: 0',{fontSize:'24px',fill:'#000'})
+  this.supabaseStatus=this.add.text(16,50,'Supabase: Connected',{fontSize:'16px',fill:'#0a0'})
 }
-getCoin(player,coin){coin.disableBody(true,true);this.sound.play('coinS')}
+getCoin(player,coin){
+  coin.disableBody(true,true)
+  this.sound.play('coinS')
+  this.score+=10
+  this.coinsCollected++
+  this.scoreText.setText('Score: '+this.score)
+  if(this.coinsCollected>=12){
+    this.supabaseStatus.setText('All coins collected! Score saved to Supabase')
+    if(typeof SupabaseHelper!=='undefined'){
+      SupabaseHelper.saveScore('Player',this.score,this.coinsCollected)
+    }
+  }
+}
 update(){
   const left=this.cursors.left.isDown||this.touch.left
   const right=this.cursors.right.isDown||this.touch.right
