@@ -1,0 +1,552 @@
+/* ===================================
+   lululemon Brand Variables & Reset
+   =================================== */
+
+:root {
+    /* Brand Colors */
+    --lulu-red: #D31334;
+    --lulu-black: #000000;
+    --lulu-dark-gray: #1a1a1a;
+    --lulu-medium-gray: #4a4a4a;
+    --lulu-light-gray: #f5f5f5;
+    --lulu-white: #ffffff;
+    --lulu-border: #e5e5e5;
+
+    /* Typography */
+    --font-primary: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 40px;
+    --spacing-xl: 60px;
+    --spacing-xxl: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--lulu-black);
+    background-color: var(--lulu-white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ===================================
+   Image Placeholders
+   =================================== */
+
+.image-placeholder {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lulu-medium-gray);
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ===================================
+   Header & Navigation
+   =================================== */
+
+.header {
+    background-color: var(--lulu-white);
+    border-bottom: 1px solid var(--lulu-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: var(--spacing-sm) 0;
+}
+
+.header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: var(--spacing-md);
+    flex: 1;
+}
+
+.nav-right {
+    justify-content: flex-end;
+}
+
+.nav-logo {
+    flex: 0 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    color: var(--lulu-red);
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--lulu-black);
+    white-space: nowrap;
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+
+.hero {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-placeholder {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--lulu-black);
+    max-width: 600px;
+    padding: var(--spacing-md);
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    font-weight: var(--font-weight-light);
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: 0.5px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===================================
+   Buttons
+   =================================== */
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--lulu-black);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--lulu-black);
+    color: var(--lulu-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--lulu-white);
+    color: var(--lulu-black);
+    opacity: 1;
+}
+
+.btn-secondary {
+    background-color: var(--lulu-white);
+    color: var(--lulu-black);
+}
+
+.btn-secondary:hover {
+    background-color: var(--lulu-black);
+    color: var(--lulu-white);
+    opacity: 1;
+}
+
+/* ===================================
+   Container & Sections
+   =================================== */
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    letter-spacing: -0.5px;
+}
+
+/* ===================================
+   Featured Categories
+   =================================== */
+
+.featured-categories {
+    padding: var(--spacing-xxl) 0;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.category-card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+}
+
+.category-placeholder {
+    width: 100%;
+    height: 400px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.category-title {
+    font-size: 20px;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-xs);
+}
+
+.category-link {
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    color: var(--lulu-black);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* ===================================
+   Product Showcase
+   =================================== */
+
+.product-showcase {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--lulu-light-gray);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.product-card {
+    background-color: var(--lulu-white);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.product-placeholder {
+    width: 100%;
+    height: 350px;
+}
+
+.product-info {
+    padding: var(--spacing-sm);
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.4;
+}
+
+.product-price {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    color: var(--lulu-medium-gray);
+    margin-bottom: var(--spacing-xs);
+}
+
+.product-colors {
+    display: flex;
+    gap: 8px;
+}
+
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--lulu-border);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.color-dot:hover {
+    transform: scale(1.15);
+}
+
+/* ===================================
+   Lifestyle Section
+   =================================== */
+
+.lifestyle-section {
+    padding: var(--spacing-xxl) 0;
+}
+
+.lifestyle-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.lifestyle-placeholder {
+    width: 100%;
+    height: 500px;
+}
+
+.lifestyle-text {
+    padding: var(--spacing-lg);
+}
+
+.lifestyle-title {
+    font-size: 40px;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.5px;
+}
+
+.lifestyle-description {
+    font-size: 16px;
+    font-weight: var(--font-weight-light);
+    line-height: 1.8;
+    color: var(--lulu-medium-gray);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ===================================
+   Footer
+   =================================== */
+
+.footer {
+    background-color: var(--lulu-light-gray);
+    padding: var(--spacing-xl) 0 var(--spacing-md);
+    margin-top: var(--spacing-xxl);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.footer-title {
+    font-size: 14px;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-links a {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    color: var(--lulu-medium-gray);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--lulu-border);
+    padding-top: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: var(--lulu-medium-gray);
+}
+
+.footer-legal {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.footer-legal a {
+    font-size: 12px;
+    color: var(--lulu-medium-gray);
+    text-decoration: underline;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .lifestyle-content {
+        grid-template-columns: 1fr;
+    }
+
+    .lifestyle-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-left,
+    .nav-right {
+        gap: var(--spacing-sm);
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .hero {
+        height: 500px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: var(--spacing-sm);
+    }
+
+    .lifestyle-title {
+        font-size: 28px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .hero-cta {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
